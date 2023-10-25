@@ -86,15 +86,27 @@
 
       <div class="carousel-inner" role="listbox">
         {% for item in banner %}
-        <!-- Slide 1 -->
-        <div class="carousel-item active" style="background-image: url('{% static item.img.url %}')">
-          <div class="carousel-container">
-            <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">{{ item.title }}</h2>
-              <p class="animate__animated animate__fadeInUp">{{ item.description }}</p>
+          {% if forloop.first %}
+            <!-- Slide 1 - active item -->
+            <div class="carousel-item active" style="background-image: url('{% static item.img.url %}')">
+              <div class="carousel-container">
+                <div class="container">
+                  <h2 class="animate__animated animate__fadeInDown">{{ item.title }}</h2>
+                  <p class="animate__animated animate__fadeInUp">{{ item.description }}</p>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          {% else %}
+            <!-- Other slides -->
+            <div class="carousel-item" style="background-image: url('{% static item.img.url %}')">
+              <div class="carousel-container">
+                <div class="container">
+                  <h2 class="animate__animated animate__fadeInDown">{{ item.title }}</h2>
+                  <p class="animate__animated animate__fadeInUp">{{ item.description }}</p>
+                </div>
+              </div>
+            </div>
+          {% endif %}
         {% endfor %}
       </div>
 
