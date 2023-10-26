@@ -70,6 +70,7 @@
                 <th scope="col">NoTelp</th>
                 <th scope="col">Tanggal</th>
                 <th scope="col">Layanan</th>
+                <th scope="col">Jumlah</th>
                 <th scope="col">Penerima</th>
                 <th scope="col">Alamat</th>
                 <th scope="col">NoTelp</th>
@@ -78,11 +79,12 @@
             <tbody>
               {% for item in item %}
               <tr>
-                <th scope="row">{{ item.idprof }}</th>
+                <th scope="row">{{ item.iditems }}</th>
                 <td>{{ item.author.first_name }}</td>
                 <td>{{ item.no_telp_pemesan }}</td>
                 <td>{{ item.tanggal_ketemu }}</td>
                 <td>{{ item.layanan }}</td>
+                <td>{{ item.jumlah }}</td>
                 <td>{{ item.nama_penerima }}</td>
                 <td>{{ item.alamat }}</td>
                 <td>{{ item.no_telp_penerima }}</td>
